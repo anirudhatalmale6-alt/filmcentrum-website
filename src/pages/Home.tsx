@@ -49,12 +49,12 @@ export default function Home() {
               <p className="text-gray-600 mt-1">Filmer i katalogen</p>
             </div>
             <div>
-              <p className="text-3xl md:text-4xl font-bold text-fc-red">{stats?.total || '...'}</p>
+              <p className="text-3xl md:text-4xl font-bold text-fc-red">400+</p>
               <p className="text-gray-600 mt-1">Medlemmar</p>
             </div>
             <div>
               <p className="text-3xl md:text-4xl font-bold text-fc-red">50+</p>
-              <p className="text-gray-600 mt-1">Ar av filmkultur</p>
+              <p className="text-gray-600 mt-1">År av filmkultur</p>
             </div>
           </div>
         </div>
