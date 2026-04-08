@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const API_BASE = '/fc/api';
-const SWISH_NUMBER = '1234567890'; // TODO: Replace with real Swish number
+const SWISH_NUMBER = '123 381 35 73';
 
 type Step = 'info' | 'form' | 'swish' | 'done';
 
