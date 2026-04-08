@@ -15,11 +15,10 @@ export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="relative bg-fc-dark text-white overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-fc-dark via-fc-navy to-fc-dark" />
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-fc-red rounded-full blur-[120px]" />
-          <div className="absolute bottom-10 right-20 w-96 h-96 bg-fc-gold rounded-full blur-[150px]" />
+      <section className="relative bg-fc-dark text-white overflow-hidden min-h-[500px]">
+        <div className="absolute inset-0">
+          <img src="/filmcentrum/fc-team.jpg" alt="FilmCentrum" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-r from-fc-dark/90 via-fc-dark/70 to-fc-dark/50" />
         </div>
         <div className="relative container-fc py-24 md:py-36">
           <div className="max-w-3xl">
@@ -46,7 +45,7 @@ export default function Home() {
         <div className="container-fc py-12">
           <div className="grid grid-cols-3 gap-8 text-center">
             <div>
-              <p className="text-3xl md:text-4xl font-bold text-fc-red">300+</p>
+              <p className="text-3xl md:text-4xl font-bold text-fc-red">1000+</p>
               <p className="text-gray-600 mt-1">Filmer i katalogen</p>
             </div>
             <div>
