@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html { scroll-behavior: smooth; }
+body { margin: 0; -webkit-font-smoothing: antialiased; }
+
+@layer components {
+  .container-fc {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+  .btn-primary {
+    @apply inline-flex items-center px-6 py-3 bg-fc-red text-white font-medium rounded-lg
+      hover:bg-red-700 transition-colors duration-200;
+  }
+  .btn-outline {
+    @apply inline-flex items-center px-6 py-3 border-2 border-white text-white font-medium rounded-lg
+      hover:bg-white hover:text-fc-dark transition-colors duration-200;
+  }
+}
