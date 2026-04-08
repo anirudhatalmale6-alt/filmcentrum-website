@@ -4,12 +4,13 @@ import { Link, useLocation } from 'react-router-dom';
 const navItems = [
   { path: '/', label: 'Hem' },
   { path: '/om-oss', label: 'Om oss' },
-  { path: '/filmer', label: 'Filmer' },
   { path: '/skolbio', label: 'Skolbio' },
   { path: '/medlemmar', label: 'Medlemmar' },
   { path: '/prenumeration', label: 'Nyhetsbrev' },
   { path: '/kontakt', label: 'Kontakt' },
 ];
+
+const FC_DISTRIBUTION_URL = '/fc/';
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -19,8 +20,11 @@ export default function Header() {
     <header className="bg-white shadow-sm sticky top-0 z-50">
       <div className="container-fc">
         <div className="flex items-center justify-between h-16 md:h-20">
-          <Link to="/" className="flex items-center gap-2">
+          <Link to="/" className="flex items-center gap-3">
             <img src="/filmcentrum/fc-logo.png" alt="FilmCentrum" className="h-12 w-auto" />
+            <div className="hidden sm:block leading-tight">
+              <span className="text-lg font-bold tracking-wide" style={{ fontFamily: "'Special Elite', 'Courier New', monospace", color: '#c0392b' }}>FILMCENTRUM RIKS</span>
+            </div>
           </Link>
 
           <nav className="hidden lg:flex items-center gap-1">
@@ -37,12 +41,18 @@ export default function Header() {
                 {item.label}
               </Link>
             ))}
+            <a
+              href={FC_DISTRIBUTION_URL}
+              className="px-3 py-2 text-sm font-medium rounded-md transition-colors text-gray-700 hover:text-fc-red hover:bg-gray-50"
+            >
+              Filmkatalog
+            </a>
           </nav>
 
           <div className="flex items-center gap-3">
-            <Link to="/filmer" className="hidden md:inline-flex btn-primary text-sm !py-2 !px-4">
-              Utforska filmer
-            </Link>
+            <a href={FC_DISTRIBUTION_URL} className="hidden md:inline-flex btn-primary text-sm !py-2 !px-4">
+              FC Distribution
+            </a>
             <button
               onClick={() => setMenuOpen(!menuOpen)}
               className="lg:hidden p-2 text-gray-600 hover:text-gray-900"
@@ -75,6 +85,12 @@ export default function Header() {
                 {item.label}
               </Link>
             ))}
+            <a
+              href={FC_DISTRIBUTION_URL}
+              className="block px-3 py-2 text-base font-medium rounded-md text-gray-700 hover:bg-gray-50"
+            >
+              Filmkatalog
+            </a>
           </div>
         )}
       </div>

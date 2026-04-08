@@ -77,7 +77,7 @@ export default function Skolbio() {
             <h2 className="text-2xl font-display font-bold text-gray-900 mb-4">Redo att boka?</h2>
             <p className="text-gray-600 mb-6">Kontakta oss sa hjalper vi dig att hitta ratt film for din klass.</p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link to="/filmer" className="btn-primary">Utforska filmkatalogen</Link>
+              <a href="/fc/" className="btn-primary">Utforska filmkatalogen</a>
               <Link to="/kontakt" className="inline-flex items-center px-6 py-3 border-2 border-fc-red text-fc-red font-medium rounded-lg hover:bg-fc-red hover:text-white transition-colors">
                 Kontakta oss
               </Link>

@@ -4,9 +4,6 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import OmOss from './pages/OmOss';
 import Medlemmar from './pages/Medlemmar';
-import MedlemProfil from './pages/MedlemProfil';
-import Filmkatalog from './pages/Filmkatalog';
-import FilmDetalj from './pages/FilmDetalj';
 import Kontakt from './pages/Kontakt';
 import Prenumeration from './pages/Prenumeration';
 import Skolbio from './pages/Skolbio';
@@ -21,9 +18,6 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/om-oss" element={<OmOss />} />
           <Route path="/medlemmar" element={<Medlemmar />} />
-          <Route path="/medlem/:id" element={<MedlemProfil />} />
-          <Route path="/filmer" element={<Filmkatalog />} />
-          <Route path="/film/:id" element={<FilmDetalj />} />
           <Route path="/kontakt" element={<Kontakt />} />
           <Route path="/prenumeration" element={<Prenumeration />} />
           <Route path="/skolbio" element={<Skolbio />} />

@@ -1,15 +1,14 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import FilmCard from '../components/FilmCard';
 import NewsletterBanner from '../components/NewsletterBanner';
-import { getFilms, getMemberStats } from '../api';
+import { getMemberStats } from '../api';
+
+const FC_DISTRIBUTION_URL = '/fc/';
 
 export default function Home() {
-  const [films, setFilms] = useState<any[]>([]);
   const [stats, setStats] = useState<any>(null);
 
   useEffect(() => {
-    getFilms().then((f) => setFilms(f.slice(0, 8))).catch(() => {});
     getMemberStats().then(setStats).catch(() => {});
   }, []);
 
@@ -24,18 +23,16 @@ export default function Home() {
         </div>
         <div className="relative container-fc py-24 md:py-36">
           <div className="max-w-3xl">
-            <img src="/filmcentrum/fc-logo-white.jpg" alt="FilmCentrum" className="h-20 md:h-28 w-auto mb-8" />
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold leading-tight mb-6">
-              Film och filmpedagogik for utbildning
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight mb-4" style={{ fontFamily: "'Special Elite', 'Courier New', monospace", color: '#c0392b' }}>
+              FILMCENTRUM RIKS
             </h1>
-            <p className="text-lg md:text-xl text-gray-300 leading-relaxed mb-8 max-w-2xl">
-              FilmCentrum -- film och filmpedagogik for utbildning och slutna grupper.
-              Skolbio online och pa biograf.
+            <p className="text-xl md:text-2xl text-gray-300 mb-8" style={{ fontFamily: "'Special Elite', 'Courier New', monospace" }}>
+              &ndash;En forening av filmare for filmare
             </p>
             <div className="flex flex-wrap gap-4">
-              <Link to="/filmer" className="btn-primary text-lg !px-8 !py-4">
-                Utforska filmer
-              </Link>
+              <a href={FC_DISTRIBUTION_URL} className="btn-primary text-lg !px-8 !py-4">
+                FC Distribution
+              </a>
               <Link to="/om-oss" className="btn-outline text-lg !px-8 !py-4">
                 Lar kanna oss
               </Link>
@@ -47,18 +44,14 @@ export default function Home() {
       {/* Stats */}
       <section className="bg-white border-b">
         <div className="container-fc py-12">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div className="grid grid-cols-3 gap-8 text-center">
             <div>
-              <p className="text-3xl md:text-4xl font-bold text-fc-red">{films.length > 0 ? '300+' : '...'}</p>
+              <p className="text-3xl md:text-4xl font-bold text-fc-red">300+</p>
               <p className="text-gray-600 mt-1">Filmer i katalogen</p>
             </div>
             <div>
               <p className="text-3xl md:text-4xl font-bold text-fc-red">{stats?.total || '...'}</p>
               <p className="text-gray-600 mt-1">Medlemmar</p>
-            </div>
-            <div>
-              <p className="text-3xl md:text-4xl font-bold text-fc-red">8</p>
-              <p className="text-gray-600 mt-1">Regionala kontor</p>
             </div>
             <div>
               <p className="text-3xl md:text-4xl font-bold text-fc-red">50+</p>
@@ -92,9 +85,9 @@ export default function Home() {
             <div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-100">
               <div className="space-y-6">
                 {[
-                  { icon: '🎬', title: 'Filmdistribution', desc: 'Vi distribuerar oberoende svensk och internationell film till skolor och kulturinstitutioner.' },
-                  { icon: '🏫', title: 'Skolbio', desc: 'Skolbiovisningar med pedagogiskt material och filmsamtal for alla aldersgrupper.' },
-                  { icon: '🤝', title: 'Medlemskap', desc: 'Bli medlem i Sveriges storsta kooperativ for oberoende filmskapare.' },
+                  { icon: '🎬', title: 'FC Distribution', desc: 'Utforska vart filmutbud pa FC Distribution -- oberoende svensk och internationell film.', link: FC_DISTRIBUTION_URL },
+                  { icon: '🏫', title: 'Skolbio', desc: 'Skolbiovisningar med pedagogiskt material och filmsamtal for alla aldersgrupper.', link: '/skolbio' },
+                  { icon: '🤝', title: 'Medlemskap', desc: 'Bli medlem i Sveriges storsta kooperativ for oberoende filmskapare.', link: '/medlemmar' },
                 ].map((item) => (
                   <div key={item.title} className="flex gap-4">
                     <span className="text-3xl flex-shrink-0">{item.icon}</span>
@@ -109,31 +102,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Featured Films */}
-      {films.length > 0 && (
-        <section className="section-padding">
-          <div className="container-fc">
-            <div className="flex items-end justify-between mb-8">
-              <div>
-                <p className="text-fc-red font-medium mb-2 uppercase text-sm tracking-wider">Filmkatalog</p>
-                <h2 className="text-3xl md:text-4xl font-display font-bold text-gray-900">Utvalda filmer</h2>
-              </div>
-              <Link to="/filmer" className="text-fc-red font-medium hover:underline hidden md:block">
-                Se alla filmer &rarr;
-              </Link>
-            </div>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 md:gap-6">
-              {films.map((film: any) => (
-                <FilmCard key={film.id} film={film} />
-              ))}
-            </div>
-            <div className="text-center mt-8 md:hidden">
-              <Link to="/filmer" className="btn-primary">Se alla filmer</Link>
-            </div>
-          </div>
-        </section>
-      )}
 
       {/* Skolbio CTA */}
       <section className="bg-gradient-to-r from-fc-red to-red-700 text-white section-padding">

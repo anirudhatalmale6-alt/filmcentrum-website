@@ -62,23 +62,10 @@ export default function OmOss() {
               ))}
             </div>
 
-            <h2 className="text-2xl font-display font-bold text-gray-900 mb-4">Regionala kontor</h2>
-            <p className="text-gray-600 leading-relaxed mb-4">
-              FilmCentrum har regionala kontor over hela Sverige for att sakerstalla att film nar ut till alla delar av landet:
-            </p>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8">
-              {['Stockholm', 'Goteborg', 'Malmo', 'Uppsala', 'Umea', 'Lulea', 'Vaxjo', 'Orebro'].map((city) => (
-                <div key={city} className="bg-fc-red/5 text-fc-red text-center py-3 rounded-lg font-medium text-sm">
-                  {city}
-                </div>
-              ))}
-            </div>
-
             <h2 className="text-2xl font-display font-bold text-gray-900 mb-4">Organisation</h2>
             <p className="text-gray-600 leading-relaxed mb-2">
-              FilmCentrum Riks ar den nationella paraplyorganisationen som samordnar
-              arbetet mellan de regionala kontoren. Vi ar organiserade som ett kooperativ
-              dar varje medlem har en rost.
+              FilmCentrum Riks ar den nationella paraplyorganisationen. Vi ar organiserade
+              som ett kooperativ dar varje medlem har en rost.
             </p>
             <div className="bg-gray-50 rounded-xl p-6 border border-gray-100 mt-4">
               <div className="grid grid-cols-2 gap-4 text-sm">
