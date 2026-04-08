@@ -7,10 +7,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12">
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 bg-fc-red rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">FC</span>
-              </div>
-              <span className="text-xl font-bold">FilmCentrum</span>
+              <img src="/filmcentrum/fc-logo-white.jpg" alt="FilmCentrum" className="h-14 w-auto" />
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
               FilmCentrum ar ett rikstackande kooperativ for oberoende filmskapare i Sverige.

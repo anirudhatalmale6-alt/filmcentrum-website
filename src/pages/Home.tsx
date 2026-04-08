@@ -24,13 +24,13 @@ export default function Home() {
         </div>
         <div className="relative container-fc py-24 md:py-36">
           <div className="max-w-3xl">
-            <p className="text-fc-gold font-medium mb-4 tracking-wider uppercase text-sm">Sveriges filmkooperativ</p>
+            <img src="/filmcentrum/fc-logo-white.jpg" alt="FilmCentrum" className="h-20 md:h-28 w-auto mb-8" />
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold leading-tight mb-6">
-              Film som berr, bilder som berattar
+              Film och filmpedagogik for utbildning
             </h1>
             <p className="text-lg md:text-xl text-gray-300 leading-relaxed mb-8 max-w-2xl">
-              FilmCentrum ar ett rikstackande kooperativ for oberoende filmskapare.
-              Vi sprider kvalitetsfilm till skolor, bibliotek och kulturinstitutioner over hela Sverige.
+              FilmCentrum -- film och filmpedagogik for utbildning och slutna grupper.
+              Skolbio online och pa biograf.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link to="/filmer" className="btn-primary text-lg !px-8 !py-4">

@@ -19,14 +19,8 @@ export default function Header() {
     <header className="bg-white shadow-sm sticky top-0 z-50">
       <div className="container-fc">
         <div className="flex items-center justify-between h-16 md:h-20">
-          <Link to="/" className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-fc-red rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">FC</span>
-            </div>
-            <div className="hidden sm:block">
-              <span className="text-xl font-bold text-gray-900">FilmCentrum</span>
-              <span className="block text-xs text-gray-500 -mt-1">Sveriges filmkooperativ</span>
-            </div>
+          <Link to="/" className="flex items-center gap-2">
+            <img src="/filmcentrum/fc-logo.png" alt="FilmCentrum" className="h-12 w-auto" />
           </Link>
 
           <nav className="hidden lg:flex items-center gap-1">
