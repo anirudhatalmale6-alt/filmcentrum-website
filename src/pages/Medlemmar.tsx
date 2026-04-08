@@ -132,14 +132,15 @@ export default function Medlemmar() {
             </h2>
           </div>
 
-          <div className="max-w-lg mx-auto">
-            <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl border-2 border-fc-red/20 p-8 text-center shadow-lg">
-              <p className="text-fc-red font-medium uppercase text-sm tracking-wider mb-2">Arsmedlemskap</p>
-              <div className="flex items-baseline justify-center gap-1 mb-2">
-                <span className="text-5xl font-bold text-gray-900">500</span>
+          <div className="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+            {/* New member */}
+            <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl border-2 border-fc-red p-8 text-center shadow-lg relative">
+              <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-fc-red text-white text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wider">Ny medlem</span>
+              <div className="flex items-baseline justify-center gap-1 mb-2 mt-2">
+                <span className="text-5xl font-bold text-gray-900">200</span>
                 <span className="text-xl text-gray-500">kr/ar</span>
               </div>
-              <p className="text-gray-500 text-sm mb-6">Enskild filmskapare</p>
+              <p className="text-gray-500 text-sm mb-6">Forsta aret</p>
 
               <ul className="text-left space-y-3 mb-8">
                 {[
@@ -161,11 +162,41 @@ export default function Medlemmar() {
               </ul>
 
               <Link to="/kontakt" className="btn-primary w-full !py-3 block text-center">
-                Ansok om medlemskap
+                Bli medlem
               </Link>
-              <p className="text-xs text-gray-400 mt-3">
-                Kontakta oss for foretags- eller organisationsmedlemskap
-              </p>
+            </div>
+
+            {/* Renewal */}
+            <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl border-2 border-gray-200 p-8 text-center shadow-lg">
+              <p className="text-gray-500 font-medium uppercase text-sm tracking-wider mb-2 mt-2">Fornyelse</p>
+              <div className="flex items-baseline justify-center gap-1 mb-2">
+                <span className="text-5xl font-bold text-gray-900">100</span>
+                <span className="text-xl text-gray-500">kr/ar</span>
+              </div>
+              <p className="text-gray-500 text-sm mb-6">Befintliga medlemmar</p>
+
+              <ul className="text-left space-y-3 mb-8">
+                {[
+                  'Fortsatt distribution av dina filmer',
+                  'Uppdaterad filmsida och profil',
+                  'Synlighet mot skolor och bibliotek',
+                  'Intakter fran filmvisningar',
+                  'Deltagande i skolbioprogram',
+                  'Natverk med oberoende filmskapare',
+                  'Rostrett pa arsmote',
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-2">
+                    <svg className="w-5 h-5 text-fc-red flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span className="text-gray-700 text-sm">{item}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <Link to="/kontakt" className="btn-primary w-full !py-3 block text-center bg-gray-800 hover:bg-gray-700">
+                Fornya medlemskap
+              </Link>
             </div>
           </div>
         </div>
