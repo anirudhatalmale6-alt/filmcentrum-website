@@ -1,17 +1,19 @@
 import { Link } from 'react-router-dom';
 
 interface Film {
-  id: number;
+  id: string | number;
   title: string;
   director?: string;
-  year?: number;
+  year?: string | number;
   age?: string;
+  image?: string;
   poster_url?: string;
   synopsis?: string;
 }
 
 export default function FilmCard({ film }: { film: Film }) {
-  const poster = film.poster_url || '/filmcentrum/placeholder.svg';
+  const img = film.image || film.poster_url;
+  const poster = img ? `/fc${img.startsWith('/') ? '' : '/'}${img}` : '/filmcentrum/placeholder.svg';
 
   return (
     <Link

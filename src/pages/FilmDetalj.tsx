@@ -9,7 +9,7 @@ export default function FilmDetalj() {
 
   useEffect(() => {
     if (id) {
-      getFilm(parseInt(id))
+      getFilm(id)
         .then(setFilm)
         .catch(() => {})
         .finally(() => setLoading(false));
@@ -27,7 +27,7 @@ export default function FilmDetalj() {
           <div className="grid md:grid-cols-[300px_1fr] gap-8 md:gap-12">
             <div className="aspect-[2/3] rounded-xl overflow-hidden bg-gray-800 shadow-2xl">
               <img
-                src={film.poster_url || '/filmcentrum/placeholder.svg'}
+                src={film.image ? `/fc${film.image.startsWith('/') ? '' : '/'}${film.image}` : '/filmcentrum/placeholder.svg'}
                 alt={film.title}
                 className="w-full h-full object-cover"
                 onError={(e) => { (e.target as HTMLImageElement).src = '/filmcentrum/placeholder.svg'; }}
@@ -41,7 +41,7 @@ export default function FilmDetalj() {
                 {film.year && <span>Ar: <strong className="text-white">{film.year}</strong></span>}
                 {film.duration && <span>Langd: <strong className="text-white">{film.duration} min</strong></span>}
                 {film.age && <span>Alder: <strong className="text-white">{film.age}</strong></span>}
-                {film.language && <span>Sprak: <strong className="text-white">{film.language}</strong></span>}
+                {film.sprak && <span>Sprak: <strong className="text-white">{film.sprak}</strong></span>}
               </div>
 
               {film.synopsis && (

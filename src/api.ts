@@ -11,7 +11,7 @@ export async function getFilms() {
   return data.films || [];
 }
 
-export async function getFilm(id: number) {
+export async function getFilm(id: string | number) {
   const data = await fetchJSON(`${API_BASE}/films/${id}`);
   return data.film;
 }
